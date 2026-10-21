@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Meet the Barangay and Sangguniang Kabataan officials of Barangay Biringan.">
+    <title>Barangay Officials | Barangay Biringan</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="officials.css">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+
+    <header class="site-header">
+        <nav class="navbar container" aria-label="Main navigation">
+            <a href="index.html" class="logo">
+                <div class="logo-icon" aria-hidden="true">🏛️</div>
+                <div class="logo-text">
+                    <strong>BARANGAY BIRINGAN</strong>
+                    <small>Community Information Portal</small>
+                </div>
+            </a>
+
+            <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navMenu" aria-label="Open menu"><span></span></button>
+
+            <div class="nav-menu" id="navMenu">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="officials.html" class="active" aria-current="page">Officials</a></li>
+                    <li><a href="index.html#announcements">Announcements</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <a href="index.html#login" class="nav-button">Resident Login</a>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main">
+
+        <section class="officials-hero">
+            <div class="container officials-hero-content">
+                <span class="section-label">Public service • Community leadership</span>
+                <h1>Meet Our Barangay Officials</h1>
+                <p>
+                    Get to know the people serving Barangay Biringan. Find information
+                    about our barangay leaders and Sangguniang Kabataan officials.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#barangay-officials" class="btn btn-gold">Barangay Officials</a>
+                    <a href="#sk-officials" class="btn btn-ghost">SK Officials</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="officials-intro">
+            <div class="container">
+                <div class="officials-intro-content">
+                    <span class="section-label">Leadership and service</span>
+                    <h2>Serving the People of Barangay Biringan</h2>
+                    <p>
+                        Our barangay officials help deliver community services, support local
+                        development, maintain peace and order, and respond to the needs of residents.
+                    </p>
+                    <p>
+                        This directory shows each official's position, profile, and available
+                        contact information. Please contact the barangay office to confirm
+                        official schedules and contact details.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cards are generated from the data list in the script at the bottom of this file -->
+        <section id="barangay-officials" class="officials-section">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="section-label">Barangay government</span>
+                    <h2>Barangay Officials</h2>
+                    <p>Meet the officials responsible for barangay governance and community services.</p>
+                </div>
+                <div class="officials-grid" id="barangayGrid"></div>
+                <noscript><p>Please enable JavaScript to view the officials directory.</p></noscript>
+            </div>
+        </section>
+
+        <section id="sk-officials" class="officials-section sk-section">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="section-label">Youth leadership</span>
+                    <h2>Sangguniang Kabataan Officials</h2>
+                    <p>Meet the youth leaders working to promote youth participation, development, and community engagement.</p>
+                </div>
+                <div class="officials-grid" id="skGrid"></div>
+            </div>
+        </section>
+
+        <section class="officials-contact-section">
+            <div class="container officials-contact-content">
+                <div>
+                    <span class="section-label">Need assistance?</span>
+                    <h2>Contact the Barangay Office</h2>
+                    <p>
+                        For official concerns, community services, or questions about an
+                        official's availability, please contact or visit the barangay office.
+                    </p>
+                </div>
+                <a href="index.html#contact" class="btn btn-gold">Contact Us</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Official information modal -->
+    <div class="official-modal" id="officialModal" role="dialog" aria-modal="true" aria-labelledby="modalOfficialName" aria-hidden="true">
+        <div class="official-modal-backdrop" data-close></div>
+        <div class="official-modal-content">
+            <button class="official-modal-close" type="button" aria-label="Close official information" data-close>&times;</button>
+
+            <span class="section-label">Official profile</span>
+            <h2 id="modalOfficialName">Official Name</h2>
+            <p id="modalOfficialPosition" class="official-position"></p>
+
+            <div class="modal-info-divider"></div>
+
+            <h3>About</h3>
+            <p id="modalOfficialDescription"></p>
+
+            <div class="modal-contact-details">
+                <p><strong>Office:</strong> <span id="modalOfficialOffice"></span></p>
+                <p><strong>Email:</strong> <span id="modalOfficialEmail"></span></p>
+                <p><strong>Phone:</strong> <span id="modalOfficialPhone"></span></p>
+            </div>
+
+            <button class="btn btn-primary modal-done-btn" type="button" data-close>Close Information</button>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-content container">
+            <div class="footer-brand">
+                <h2>🏛️ BARANGAY BIRINGAN</h2>
+                <p>Working together for a safer, stronger, and more united community.</p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="officials.html">Officials</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="currentYear">2026</span> Barangay Biringan. Community service through unity and cooperation.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        /* ------------------------------------------------------------
+           EDIT YOUR OFFICIALS HERE.
+           photo: file name inside the "photos" folder (leave "" if none).
+           email / phone: leave "" to show "Not yet provided".
+        ------------------------------------------------------------ */
+        var BARANGAY = [
+            { name: "Kap Nino", position: "Punong Barangay", badge: "Barangay Chairperson", featured: true, photo: "Kap Nino.jpg", office: "Barangay Hall",
+              about: "Leads the barangay council and oversees local programs, services, and community development." },
+            { name: "Joel Ravanera", position: "Barangay Kagawad", photo: "Malupiton.jpg",
+              about: "Assists in council deliberations, local programs, and community initiatives." },
+            { name: "Deo Jarito Balbuena", position: "Barangay Kagawad", photo: "Diwata.jpg",
+              about: "Participates in barangay policy-making and community service activities." },
+            { name: "Naser Ignacio Mollazehi", position: "Barangay Kagawad", photo: "Akosi Dogie.jpg",
+              about: "Supports community programs and assists in addressing residents' concerns." },
+            { name: "Boss Atan", position: "Barangay Kagawad", photo: "Boss Atan.jpg",
+              about: "Helps implement local initiatives and supports barangay council activities." },
+            { name: "Joshua Mangilog", position: "Barangay Kagawad", photo: "Ch4knu.jpg",
+              about: "Contributes to council decisions and supports programs for barangay residents." },
+            { name: "Mariam Sayed Sameer Marbella Al-Alawi", position: "Barangay Kagawad", photo: "Ivana Alawi.jpg",
+              about: "Participates in community planning and barangay service delivery." },
+            { name: "Sachzna Laparan", position: "Barangay Kagawad", photo: "Sachzna Laparan.jpg",
+              about: "Supports barangay activities and initiatives that benefit the local community." },
+            { name: "Jhyllianne Wardä", position: "Barangay Secretary", photo: "Jillian Ward.jpg",
+              about: "Assists with official records, meeting minutes, and barangay documentation." },
+            { name: "Tony Fowler", position: "Barangay Treasurer", photo: "Tony Fowler.jpg",
+              about: "Assists in managing barangay funds and maintaining financial records in accordance with applicable rules." }
+        ];
+
+        var SK = [
+            { name: "JB Suarez", position: "SK Chairperson", badge: "Youth Leader", featured: true, photo: "JB Suarez.jpg", office: "Barangay Hall / SK Office",
+              about: "Leads the SK council and helps develop programs for the youth of Barangay Biringan." },
+            { name: "Tyrone Tiaga", position: "SK Kagawad", photo: "Tyrone.jpg",
+              about: "Helps plan youth activities and community development projects." },
+            { name: "Azi Acosta", position: "SK Kagawad", photo: "Azi Acosta.jpg",
+              about: "Supports youth engagement and programs for young residents." },
+            { name: "Felix Petate", position: "SK Kagawad", photo: "Sassa Gurl.jpg",
+              about: "Participates in planning youth-oriented projects and activities." },
+            { name: "Esnyr John Ranollo", position: "SK Kagawad", photo: "Esnyr.jpg",
+              about: "Helps organize activities that encourage youth participation and leadership." },
+            { name: "Bananito Cuh", position: "SK Kagawad", photo: "Bananito.jpg",
+              about: "Contributes to youth projects and community-building activities." },
+            { name: "Sample SK Kagawad 6", position: "SK Kagawad", photo: "",
+              about: "Supports initiatives that help young people participate in local development." },
+            { name: "Sample SK Kagawad 7", position: "SK Kagawad", photo: "",
+              about: "Participates in youth council activities and community programs." },
+            { name: "Sample SK Secretary", position: "SK Secretary", photo: "",
+              about: "Assists with SK records, documentation, and meeting minutes." },
+            { name: "Sample SK Treasurer", position: "SK Treasurer", photo: "",
+              about: "Assists with SK financial records and fund management in accordance with applicable rules." }
+        ];
+
+        (function () {
+            "use strict";
+            var NOT_PROVIDED = "Not yet provided";
+
+            function initials(name) {
+                var parts = name.replace(/[^A-Za-zÀ-ÿ\s]/g, "").split(/\s+/).filter(Boolean);
+                var first = parts[0] ? parts[0][0] : "?";
+                var last = parts.length > 1 ? parts[parts.length - 1][0] : "";
+                return (first + last).toUpperCase();
+            }
+
+            function avatar(name) {
+                var div = document.createElement("div");
+                div.className = "official-avatar";
+                div.setAttribute("role", "img");
+                div.setAttribute("aria-label", "No photo available for " + name);
+                div.textContent = initials(name);
+                return div;
+            }
+
+            function buildCard(person, defaultOffice) {
+                var office = person.office || defaultOffice;
+                var email = person.email || NOT_PROVIDED;
+                var phone = person.phone || NOT_PROVIDED;
+
+                var card = document.createElement("article");
+                card.className = "official-card" + (person.featured ? " featured" : "");
+
+                var photo = document.createElement("div");
+                photo.className = "official-photo";
+                if (person.photo) {
+                    var img = document.createElement("img");
+                    img.src = "photos/" + encodeURIComponent(person.photo);
+                    img.alt = "Photo of " + person.name;
+                    img.loading = "lazy";
+                    img.addEventListener("error", function () {
+                        photo.replaceChild(avatar(person.name), img);
+                    });
+                    photo.appendChild(img);
+                } else {
+                    photo.appendChild(avatar(person.name));
+                }
+                if (person.badge) {
+                    var badge = document.createElement("span");
+                    badge.className = "official-badge";
+                    badge.textContent = person.badge;
+                    photo.appendChild(badge);
+                }
+
+                var info = document.createElement("div");
+                info.className = "official-info";
+
+                var h3 = document.createElement("h3");
+                h3.textContent = person.name;
+                var pos = document.createElement("p");
+                pos.className = "official-position";
+                pos.textContent = person.position;
+                var desc = document.createElement("p");
+                desc.className = "official-description";
+                desc.textContent = person.about;
+
+                var contact = document.createElement("div");
+                contact.className = "official-contact";
+                [["Office", office], ["Phone", phone]].forEach(function (row) {
+                    var p = document.createElement("p");
+                    var s = document.createElement("strong");
+                    s.textContent = row[0] + ":";
+                    p.appendChild(s);
+                    p.appendChild(document.createTextNode(" " + row[1]));
+                    contact.appendChild(p);
+                });
+
+                var btn = document.createElement("button");
+                btn.type = "button";
+                btn.className = "official-info-btn";
+                btn.innerHTML = "<span>View Information</span><span aria-hidden=\"true\">→</span>";
+                btn.addEventListener("click", function () {
+                    openModal({ name: person.name, position: person.position, about: person.about, office: office, email: email, phone: phone });
+                });
+
+                info.append(h3, pos, desc, contact, btn);
+                card.append(photo, info);
+                return card;
+            }
+
+            function render(list, gridId, defaultOffice) {
+                var grid = document.getElementById(gridId);
+                list.forEach(function (p) { grid.appendChild(buildCard(p, defaultOffice)); });
+            }
+
+            render(BARANGAY, "barangayGrid", "Barangay Hall");
+            render(SK, "skGrid", "SK Office");
+
+            /* Modal */
+            var modal = document.getElementById("officialModal");
+            var lastFocus = null;
+
+            function openModal(d) {
+                lastFocus = document.activeElement;
+                document.getElementById("modalOfficialName").textContent = d.name;
+                document.getElementById("modalOfficialPosition").textContent = d.position;
+                document.getElementById("modalOfficialDescription").textContent = d.about;
+                document.getElementById("modalOfficialOffice").textContent = d.office;
+                document.getElementById("modalOfficialEmail").textContent = d.email;
+                document.getElementById("modalOfficialPhone").textContent = d.phone;
+                modal.classList.add("show");
+                modal.setAttribute("aria-hidden", "false");
+                document.body.classList.add("modal-open");
+                modal.querySelector(".official-modal-close").focus();
+            }
+
+            function closeModal() {
+                modal.classList.remove("show");
+                modal.setAttribute("aria-hidden", "true");
+                document.body.classList.remove("modal-open");
+                if (lastFocus) lastFocus.focus();
+            }
+
+            modal.addEventListener("click", function (e) {
+                if (e.target.closest("[data-close]")) closeModal();
+            });
+            document.addEventListener("keydown", function (e) {
+                if (e.key === "Escape" && modal.classList.contains("show")) closeModal();
+            });
+        })();
+    </script>
+</body>
+</html>

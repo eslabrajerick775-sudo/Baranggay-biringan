@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fill out the Barangay Biringan online application form for certificates and community assistance.">
+    <title>Apply Online | Barangay Biringan</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="services.css">
+    <link rel="stylesheet" href="application-form.css">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+
+    <header class="site-header">
+        <nav class="navbar container" aria-label="Main navigation">
+            <a href="index.html" class="logo">
+                <div class="logo-icon" aria-hidden="true">🏛️</div>
+                <div class="logo-text">
+                    <strong>BARANGAY BIRINGAN</strong>
+                    <small>Community Information Portal</small>
+                </div>
+            </a>
+
+            <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navMenu" aria-label="Open menu"><span></span></button>
+
+            <div class="nav-menu" id="navMenu">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="services.html" class="active" aria-current="page">Services</a></li>
+                    <li><a href="officials.html">Officials</a></li>
+                    <li><a href="index.html#announcements">Announcements</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <a href="index.html#login" class="nav-button">Resident Login</a>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main" class="apply-page">
+        <div class="container services-breadcrumb" aria-label="Breadcrumb" style="padding-top:1.5rem">
+            <a href="index.html">Home</a> <span aria-hidden="true">›</span>
+            <a href="services.html">Services</a> <span aria-hidden="true">›</span>
+            <span aria-current="page">Apply Online</span>
+        </div>
+
+<!-- ============ ONLINE APPLICATION FORM ============
+     Paste this whole block in services.html, right after the
+     APPLICATION STEPS section and before the FAQ section. -->
+<section class="apply-section" id="apply-form">
+    <div class="container">
+        <div class="section-heading">
+            <p class="section-label">Apply online</p>
+            <h2>Barangay Service Application Form</h2>
+            <p>Fill out the form below. Fields marked <span aria-hidden="true">*</span><span class="sr-only"> with an asterisk</span> are required. Bring your original ID when you visit the barangay office.</p>
+        </div>
+
+        <div class="apply-card">
+            <div class="form-alert" id="formAlert" role="alert" tabindex="-1"></div>
+
+            <form class="apply-form" id="applicationForm" novalidate>
+
+                <fieldset>
+                    <legend>1. Type of service</legend>
+                    <div class="form-grid">
+                        <div class="form-field">
+                            <label for="serviceType">Service requested <span class="req">*</span></label>
+                            <select id="serviceType" name="serviceType" required>
+                                <option value="">Select a service</option>
+                                <option>Barangay Clearance</option>
+                                <option>Certificate of Indigency</option>
+                                <option>Certificate of Residency</option>
+                                <option>Community Assistance</option>
+                            </select>
+                            <span class="field-error" aria-live="polite"></span>
+                        </div>
+                        <div class="form-field">
+                            <label for="purpose">Purpose <span class="req">*</span></label>
+                            <select id="purpose" name="purpose" required>
+                                <option value="">Select a purpose</option>
+                                <option>Employment</option>
+                                <option>Business</option>
+                                <option>School / Scholarship</option>
+                                <option>Medical / Financial assistance</option>
+                                <option>Travel / Passport</option>
+                                <option>Other</option>
+                            </select>
+                            <span class="field-error" aria-live="polite"></span>
+                        </div>
+                        <div class="form-field full" id="purposeOtherWrap" hidden>
+                            <label for="purposeOther">Please specify the purpose <span class="req">*</span></label>
+                            <input type="text" id="purposeOther" name="purposeOther" maxlength="120">
+                            <span class="field-error" aria-live="polite"></span>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>2. Personal information</legend>
+                    <div class="form-grid">
+                        <div class="form-field">
+                            <label for="firstName">First name <span class="req">*</span></label>
+                            <input type="text" id="firstName" name="firstName" autocomplete="given-name" required>
+                            <span class="field-error" aria-live="polite"></span>
+                        </div>
+                        <div class="form-field">
+                            <label for="lastName">Last name <span class="req">*</span></label>
+                            <input type="text" id="lastName" name="lastName" autocomplete="family-name" required>
+                            <span class="field-error" aria-live="polite"></span>
+                        </div>
+                        <div class="form-field">
+                            <label for="middleName">Middle name</label>
+                            <input type="text" id="middleName" name="middleName" autocomplete="additional-name">
+                            <span class="field-error" aria-live="polite"></span>
+                        </div>
+                        <div class="form-field">
+                            <label for="birthDate">Date of birth <span class="req">*</span></label>
+                            <input type="date" id="birthDate" name="birthDate" autocomplete="bday" required>
+                            <span class="field-error" aria-live="polite"></span>
+                        </div>
+                        <div class="form-field">
+                            <label for="sex">Sex <span class="req">*</span></label>
+                            <select id="sex" name="sex" required>
+                                <option value="">Select</option>
+                                <option>Female</option>
+                                <option>Male</option>
+                            </select>
+                            <span class="field-error" aria-live="polite"></span>
+                        </div>
+                        <div class="form-field">
+                            <label for="civilStatus">Civil status <span class="req">*</span></label>
+                            <select id="civilStatus" name="civilStatus" required>
+                                <option value="">Select</option>
+                                <option>Single</option>
+                                <option>Married</option>
+                                <option>Widowed</option>
+                                <option>Separated</option>
+                            </select>
+                            <span class="field-error" aria-live="polite"></span>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>3. Contact and address</legend>
+                    <div class="form-grid">
+                        <div class="form-field">
+                            <label for="mobile">Mobile number <span class="req">*</span></label>
+                            <input type="tel" id="mobile" name="mobile" inputmode="numeric" autocomplete="tel"
+                                   placeholder="09XX XXX XXXX" pattern="^(09|\+639)\d{9}$" required>
+                            <span class="field-hint">Example: 09171234567</span>
+                            <span class="field-error" aria-live="polite"></span>
+                        </div>
+                        <div class="form-field">
+                            <label for="email">Email address</label>
+                            <input type="email" id="email" name="email" autocomplete="email">
+                            <span class="field-error" aria-live="polite"></span>
+                        </div>
+                        <div class="form-field full">
+                            <label for="address">House no., street, purok / sitio <span class="req">*</span></label>
+                            <input type="text" id="address" name="address" autocomplete="street-address" required>
+                            <span class="field-error" aria-live="polite"></span>
+                        </div>
+                        <div class="form-field">
+                            <label for="yearsResiding">Years living in Barangay Biringan <span class="req">*</span></label>
+                            <input type="number" id="yearsResiding" name="yearsResiding" min="0" max="120" required>
+                            <span class="field-error" aria-live="polite"></span>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>4. Identification</legend>
+                    <div class="form-grid">
+                        <div class="form-field">
+                            <label for="idType">Valid ID type <span class="req">*</span></label>
+                            <select id="idType" name="idType" required>
+                                <option value="">Select an ID</option>
+                                <option>PhilSys National ID</option>
+                                <option>Driver's License</option>
+                                <option>Passport</option>
+                                <option>UMID / SSS</option>
+                                <option>Voter's ID</option>
+                                <option>Postal ID</option>
+                                <option>Senior Citizen / PWD ID</option>
+                                <option>Other government-issued ID</option>
+                            </select>
+                            <span class="field-error" aria-live="polite"></span>
+                        </div>
+                        <div class="form-field">
+                            <label for="idNumber">ID number <span class="req">*</span></label>
+                            <input type="text" id="idNumber" name="idNumber" required>
+                            <span class="field-error" aria-live="polite"></span>
+                        </div>
+                        <div class="form-field full">
+                            <label for="idFile">Upload a photo of your ID</label>
+                            <input type="file" id="idFile" name="idFile" accept="image/png,image/jpeg,application/pdf">
+                            <span class="field-hint">JPG, PNG or PDF, up to 2 MB.</span>
+                            <span class="field-error" aria-live="polite"></span>
+                        </div>
+                        <div class="form-field full">
+                            <label for="remarks">Additional details</label>
+                            <textarea id="remarks" name="remarks" maxlength="500"
+                                      placeholder="Anything the barangay should know about your request"></textarea>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <div class="form-field full">
+                    <div class="consent-row">
+                        <input type="checkbox" id="consent" name="consent" required>
+                        <label for="consent">I confirm that the information above is true and correct. I agree that Barangay Biringan may collect and use my details to process this request, in line with the Data Privacy Act of 2012 (RA 10173). <span class="req">*</span></label>
+                    </div>
+                    <span class="field-error" aria-live="polite"></span>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Submit application</button>
+                    <button type="reset" class="btn-reset">Clear form</button>
+                </div>
+            </form>
+
+            <!-- Shown after a successful submit -->
+            <div class="apply-success" id="applySuccess" tabindex="-1">
+                <div class="check" aria-hidden="true">✓</div>
+                <h3>Application received</h3>
+                <p>Your reference number is</p>
+                <div class="ref-number" id="refNumber"></div>
+                <dl class="summary-list" id="summaryList"></dl>
+                <p>Bring a valid ID and mention this reference number at the barangay office. Ask staff about the fee and the release date.</p>
+                <div class="form-actions no-print" style="justify-content:center">
+                    <button type="button" class="btn btn-primary" id="printBtn">Print this slip</button>
+                    <button type="button" class="btn-reset" id="newAppBtn">Submit another application</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+(function () {
+    const form = document.getElementById('applicationForm');
+    if (!form) return;
+
+    const alertBox = document.getElementById('formAlert');
+    const success = document.getElementById('applySuccess');
+    const purpose = document.getElementById('purpose');
+    const otherWrap = document.getElementById('purposeOtherWrap');
+    const otherInput = document.getElementById('purposeOther');
+    const MAX_FILE = 2 * 1024 * 1024;
+
+    // Show "specify purpose" only when "Other" is chosen
+    purpose.addEventListener('change', () => {
+        const isOther = purpose.value === 'Other';
+        otherWrap.hidden = !isOther;
+        otherInput.required = isOther;
+        if (!isOther) { otherInput.value = ''; setError(otherInput, ''); }
+    });
+
+    function messageFor(el) {
+        const v = el.validity;
+        if (v.valueMissing) return el.type === 'checkbox' ? 'You need to agree before submitting.' : 'This field is required.';
+        if (v.typeMismatch && el.type === 'email') return 'Enter a valid email address.';
+        if (v.patternMismatch && el.type === 'tel') return 'Enter a valid mobile number, such as 09171234567.';
+        if (v.rangeUnderflow || v.rangeOverflow) return 'Enter a number within the allowed range.';
+        return el.validationMessage;
+    }
+
+    function setError(el, msg) {
+        const holder = el.closest('.form-field');
+        if (!holder) return;
+        const out = holder.querySelector('.field-error');
+        if (out) out.textContent = msg;
+        holder.classList.toggle('invalid', !!msg);
+        el.setAttribute('aria-invalid', msg ? 'true' : 'false');
+    }
+
+    function checkField(el) {
+        let msg = el.checkValidity() ? '' : messageFor(el);
+        if (!msg && el.type === 'date' && el.value && new Date(el.value) > new Date()) {
+            msg = 'Date of birth cannot be in the future.';
+        }
+        if (!msg && el.type === 'file' && el.files[0] && el.files[0].size > MAX_FILE) {
+            msg = 'File is larger than 2 MB. Choose a smaller file.';
+        }
+        setError(el, msg);
+        return !msg;
+    }
+
+    const fields = () => Array.from(form.querySelectorAll('input, select, textarea'))
+        .filter(el => !el.closest('[hidden]'));
+
+    fields().forEach(el => {
+        el.addEventListener('blur', () => checkField(el));
+        el.addEventListener('input', () => { if (el.closest('.invalid')) checkField(el); });
+        el.addEventListener('change', () => { if (el.closest('.invalid')) checkField(el); });
+    });
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const bad = fields().filter(el => !checkField(el));
+
+        if (bad.length) {
+            alertBox.textContent = 'Please fix ' + bad.length + (bad.length === 1 ? ' field' : ' fields') + ' marked in red, then submit again.';
+            alertBox.classList.add('show');
+            bad[0].focus();
+            return;
+        }
+        alertBox.classList.remove('show');
+
+        const data = Object.fromEntries(new FormData(form).entries());
+        const ref = 'BB-' + new Date().getFullYear() + '-' +
+                    String(Date.now()).slice(-6);
+
+        /* ------------------------------------------------------------
+           SENDING THE DATA
+           This page has no server, so nothing is saved yet. To really
+           receive applications, send `data` to your backend here, e.g.:
+
+           fetch('https://your-server/api/applications', {
+               method: 'POST',
+               body: new FormData(form)
+           });
+
+           Or point the form to Formspree / Google Apps Script / PHP.
+           ------------------------------------------------------------ */
+
+        showConfirmation(ref, data);
+    });
+
+    function showConfirmation(ref, d) {
+        document.getElementById('refNumber').textContent = ref;
+        const fullName = [d.firstName, d.middleName, d.lastName].filter(Boolean).join(' ');
+        const rows = [
+            ['Service', d.serviceType],
+            ['Purpose', d.purpose === 'Other' ? d.purposeOther : d.purpose],
+            ['Name', fullName],
+            ['Mobile', d.mobile],
+            ['Address', d.address],
+            ['ID presented', d.idType],
+            ['Date submitted', new Date().toLocaleDateString('en-PH', { year: 'numeric', month: 'long', day: 'numeric' })]
+        ];
+        const list = document.getElementById('summaryList');
+        list.innerHTML = '';
+        rows.forEach(([k, v]) => {
+            const dt = document.createElement('dt'); dt.textContent = k;
+            const dd = document.createElement('dd'); dd.textContent = v;   // textContent prevents HTML injection
+            list.append(dt, dd);
+        });
+        form.hidden = true;
+        success.classList.add('show');
+        success.focus();
+        success.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    document.getElementById('printBtn').addEventListener('click', () => window.print());
+
+    document.getElementById('newAppBtn').addEventListener('click', () => {
+        form.reset();
+        otherWrap.hidden = true;
+        fields().forEach(el => setError(el, ''));
+        success.classList.remove('show');
+        form.hidden = false;
+        form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+    form.addEventListener('reset', () => {
+        setTimeout(() => {
+            otherWrap.hidden = true;
+            fields().forEach(el => setError(el, ''));
+            alertBox.classList.remove('show');
+        });
+    });
+})();
+</script>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content container">
+            <div class="footer-brand">
+                <h2>🏛️ BARANGAY BIRINGAN</h2>
+                <p>Serbisyong may malasakit, para sa bawat mamamayan.</p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#about">About</a>
+                <a href="services.html">Services</a>
+                <a href="officials.html">Officials</a>
+                <a href="index.html#announcements">Announcements</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="currentYear">2026</span> Barangay Biringan Information Portal. Verify service requirements with the appropriate barangay office.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
